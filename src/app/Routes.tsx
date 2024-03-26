@@ -4,7 +4,6 @@ import { LoginPage, MainPage, NotFoundPage } from "../pages";
 
 /**
  * Маршруты приложения
-
  */
 export enum RoutesEnum {
   Home = "/",
@@ -55,8 +54,14 @@ export const routes: IAppRoute[] = [
   },
 ];
 
+/**
+ * Роуты для react-router-dom
+ */
 export const realRoutes: RouteObject[] = convertRoutes(routes);
 
+/**
+ * Роуты для sidebar, navbar и тд
+ */
 export const smallRoutes = selectRoutes(routes);
 
 /**
