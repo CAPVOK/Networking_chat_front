@@ -1,0 +1,8 @@
+:root,
+:root[data-theme="light"] {
+    --clr-surface: #dedede;
+}
+
+:root[data-theme="dark"] {
+    --clr-surface: #404040;
+}

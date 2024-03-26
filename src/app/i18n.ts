@@ -1,7 +1,7 @@
 import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
-import RU from "./translation/rus.json";
-import EN from "./translation/en.json";
+import RU from "../translation/rus.json";
+import EN from "../translation/en.json";
 
 export enum LanguageEnum {
   Eng = "en",
