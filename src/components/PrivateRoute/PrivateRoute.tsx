@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../../store/authSlice";
-import { RoutesEnum } from "../../app/Routes";
+import { RoutesEnum } from "../../app/routes/routes";
 import { FC, ReactNode } from "react";
 
 export const PrivateRoute: FC<{ children?: ReactNode }> = ({ children }) => {

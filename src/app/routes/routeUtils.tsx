@@ -1,58 +1,7 @@
 import { RouteObject } from "react-router-dom";
-import { MainLayout, PrivateRoute } from "../components";
-import { LoginPage, MainPage, NotFoundPage } from "../pages";
-
-/**
- * Маршруты приложения
- */
-export enum RoutesEnum {
-  Home = "/",
-  Register = "/register",
-  Login = "/login",
-}
-
-export interface IAppRoute {
-  label?: string;
-  path: string;
-  index?: boolean;
-  isPrivate?: boolean;
-  icon?: JSX.Element;
-  element: JSX.Element;
-  children?: IAppRoute[];
-}
-
-export interface ISimpleRouteObject {
-  label?: string;
-  icon?: JSX.Element;
-  path: string;
-}
-
-/**
- * Кастомные объекты маршрутов (с label и icon для sidebar)
- * @const IAppRoute[]
- */
-export const routes: IAppRoute[] = [
-  {
-    path: "/",
-    element: <MainLayout />,
-    isPrivate: true,
-    children: [
-      {
-        path: RoutesEnum.Home,
-        index: true,
-        element: <MainPage />,
-      },
-    ],
-  },
-  {
-    path: RoutesEnum.Login,
-    element: <LoginPage />,
-  },
-  {
-    path: "*",
-    element: <NotFoundPage />,
-  },
-];
+import { PrivateRoute } from "../../components";
+import { routes } from "./routes";
+import { IAppRoute, ISimpleRouteObject } from "./types";
 
 /**
  * Роуты для react-router-dom

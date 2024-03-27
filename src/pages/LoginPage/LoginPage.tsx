@@ -1,6 +1,6 @@
 import {  useNavigate } from "react-router-dom";
 import { useAuth } from "../../store/authSlice";
-import { RoutesEnum } from "../../app/Routes";
+import { RoutesEnum } from "../../app/routes/routes";
 import styles from "./styles.module.css";
 
 

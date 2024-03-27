@@ -1,14 +1,14 @@
 import "./App.css";
-import { realRoutes } from "./Routes";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ThemeProvider } from "./ThemeProvider";
+import { ThemeModeProvider } from "./ThemeModeProvider";
+import routes from "./routes";
 
 function App() {
-  const router = createBrowserRouter(realRoutes);
+  const router = createBrowserRouter(routes);
   return (
-    <ThemeProvider>
+    <ThemeModeProvider>
       <RouterProvider router={router} />
-    </ThemeProvider>
+    </ThemeModeProvider>
   );
 }
 

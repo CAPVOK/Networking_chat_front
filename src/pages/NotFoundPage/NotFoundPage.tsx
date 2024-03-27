@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { RoutesEnum } from "../../app/Routes";
+import { RoutesEnum } from "../../app/routes/routes";
 import styles from "./styles.module.css";
 
 export const NotFoundPage = () => {
