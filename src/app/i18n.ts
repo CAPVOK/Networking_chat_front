@@ -41,7 +41,7 @@ i18n.use(initReactI18next).init({
  * Функция для изменения языка
  * @param language Новый язык, который следует установить
  */
-export const changeLanguage = (language: LanguageEnum): void => {
+export const setLanguage = (language: LanguageEnum): void => {
   i18n.changeLanguage(language);
   localStorage.setItem("language", language);
 };
