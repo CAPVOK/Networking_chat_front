@@ -10,13 +10,13 @@ import {
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useWebSocket } from "../../hooks/useWebSocket";
 import { useApp } from "../../store/appSlice";
 import { useTheme } from "../../hooks/useTheme";
 
 import styles from "./styles.module.css";
 import { LogoIcon } from "../../assets/icons/LogoIcon";
 import { ThemeModeSwitch } from "../../components";
+import { useWebSocket } from "../../hooks/useWebSocket";
 
 const StyledButton = styled(MUIButton)(({ color = "primary" }) => ({
   color: "var(--clr-on-surface)",
@@ -39,23 +39,15 @@ function NavBar() {
   const { saveUserName, clearChat, userName } = useApp();
   const { toggleTheme, themeMode } = useTheme();
 
-  const { webSocketService } = useWebSocket();
+  const { createConnection, closeConnection } = useWebSocket();
 
   useEffect(() => {
     const user = localStorage.getItem("userName");
     if (!user) return;
     saveUserName(user);
     createConnection();
-
-    return () => {
-      webSocketService.disconnect();
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const createConnection = () => {
-    webSocketService.connect();
-  };
 
   const handleLoginClick = () => {
     setIsModalOpen(true);
@@ -65,7 +57,7 @@ function NavBar() {
     localStorage.removeItem("userName");
     saveUserName("");
     clearChat();
-    webSocketService.disconnect();
+    closeConnection();
   };
 
   const handleModalClose = () => {

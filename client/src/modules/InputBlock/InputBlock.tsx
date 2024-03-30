@@ -12,7 +12,7 @@ function InputBlock() {
   const [inputValue, setInputValue] = useState("");
 
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const { webSocketService } = useWebSocket();
+  const { sendMessage: sendMessageBySocket } = useWebSocket();
   const { userName, saveMessage } = useApp();
 
   const handleSendClick = () => {
@@ -40,7 +40,7 @@ function InputBlock() {
       };
 
       saveMessage({ ...messageData, error: false, isLoading: false });
-      webSocketService.sendMessage(messageData);
+      sendMessageBySocket(messageData);
       setInputValue("");
     }
   };
@@ -88,7 +88,10 @@ function InputBlock() {
       >
         <SendIcon
           sx={{
-            color: !inputValue || isSendLoading || !userName ? "var(--clr-outline)" : "var(--clr-primary)",
+            color:
+              !inputValue || isSendLoading || !userName
+                ? "var(--clr-outline)"
+                : "var(--clr-primary)",
           }}
         />
       </IconButton>

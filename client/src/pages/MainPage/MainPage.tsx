@@ -1,9 +1,13 @@
-import { Typography } from "@mui/material";
+import { styled, Typography } from "@mui/material";
 import { useMainPage } from "./useMainPage";
 import { MessageGroup } from "../../components";
 import { InputBlock, NavBar } from "../../modules";
 
 import s from "./styles.module.css";
+
+const StyledText = styled(Typography)(() => ({
+  color: "var(--clr-on-surface)",
+}));
 
 export const MainPage = () => {
   const {
@@ -20,9 +24,9 @@ export const MainPage = () => {
         <div className={s.chat} ref={chatRef}>
           {!userName ? (
             <div className={s.center}>
-              <Typography variant="h6" textAlign="center" component="p">
+              <StyledText variant="h6" textAlign="center">
                 Войдите в систему
-              </Typography>
+              </StyledText>
             </div>
           ) : (
             <>
