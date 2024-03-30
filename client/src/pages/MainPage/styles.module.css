@@ -1,0 +1,37 @@
+.page {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    to left,
+    var(--clr-grad-left),
+    var(--clr-grad-right)
+  );
+}
+
+.chat-block {
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-surface);
+}
+
+.chat {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  overflow-y: auto;
+}
+
+.center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

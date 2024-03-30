@@ -1,0 +1,30 @@
+.wrapper {
+  padding-inline: 15px;
+  padding-block: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-surface-container);
+}
+
+.buttons-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-shaper {
+  margin: 0;
+}
+
+.image-wrapper {
+  position: relative;
+  height: 50px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}

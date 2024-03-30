@@ -1,0 +1,60 @@
+:root,
+:root[data-theme="light"] {
+  --clr-surface: white;
+  --clr-on-surface: black;
+  --clr-on-surface-variant: rgb(255, 255, 255);
+  --clr-surface-container: white;
+  --clr-surface-container-high: rgb(250, 250, 250);
+  --clr-surface-container-highest: rgb(240, 240, 240);
+
+  --clr-primary: #00aeef;
+  --clr-on-primary: white;
+  --clr-primary-container: #00aeef;
+  --clr-on-primary-container: white;
+  --clr-on-primary-fixed-variant: gray;
+
+  --clr-success: #2ee447;
+  --clr-on-success: black;
+  --clr-success-container: #2ee447;
+  --clr-on-success-container: black;
+
+  --clr-error: #e7261a;
+  --clr-on-error: white;
+  --clr-error-container: #e7261a;
+  --clr-on-error-container: white;
+
+  --clr-outline: gray;
+
+  --clr-grad-left: #00aeef;
+  --clr-grad-right: #46dafb;
+}
+
+:root[data-theme="dark"] {
+  --clr-surface: #0f1417;
+  --clr-on-surface: #dfe3e7;
+  --clr-on-surface-variant: #C1C7CE;
+  --clr-surface-container: #1c2024;
+  --clr-surface-container-high: #262b2e;
+  --clr-surface-container-highest: #313539;
+
+  --clr-primary: #92cef5;
+  --clr-on-primary: #00344b;
+  --clr-primary-container: #004c6b;
+  --clr-on-primary-container: #c6e7ff;
+  --clr-on-primary-fixed-variant: #004c6b;
+
+  --clr-success: #a2d399;
+  --clr-on-success: #0c390e;
+  --clr-success-container: #255023;
+  --clr-on-success-container: #bdf0b3;
+
+  --clr-error: #ffb4a8;
+  --clr-on-error: #561e17;
+  --clr-error-container: #73342b;
+  --clr-on-error-container: #ffdad5;
+
+  --clr-outline: #8b9198;
+
+  --clr-grad-left: #00344b;
+  --clr-grad-right: #001e2d;
+}

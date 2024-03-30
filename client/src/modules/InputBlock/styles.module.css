@@ -1,0 +1,13 @@
+.wrapper {
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+  background-color: var(--clr-surface-container);
+}
+
+.input-root {
+  &:hover .notchedOutline {
+    border-color: "orange";
+  }
+}
