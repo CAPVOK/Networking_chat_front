@@ -10,7 +10,7 @@ paths:
     post:
       summary: Send message to clients
       description: |
-        This endpoint allows sending messages to WebSocket clients.
+        This endpoint allows sending llll to WebSocket clients.
       requestBody:
         required: true
         content:

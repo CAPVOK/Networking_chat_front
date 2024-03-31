@@ -5,8 +5,7 @@
     "./"
   ],
   "author": {
-    "email": "bna19u134@student.bmstu.ru",
-    "name": "Бахрамов Никита"
+    "name": "Кабанец Владимир"
   },
   "scripts": {
     "start": "node server.js"
