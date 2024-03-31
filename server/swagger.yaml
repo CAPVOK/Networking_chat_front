@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  title: WebSocket server API
+  version: 1.0.0
+servers:
+  - url: http://localhost:5001
+    description: Websocket server
+paths:
+  /api/send-message:
+    post:
+      summary: Send message to clients
+      description: |
+        This endpoint allows sending messages to WebSocket clients.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: The message to be sent to clients
+                  default: "Hi, I am John!"
+                sender:
+                  type: string
+                  description: The message sender's name
+                  default: "John"
+                timestamp:
+                  type: string
+                  format: date-time
+                  description: Sending time in ISO 8601 format
+                error:
+                  type: boolean
+                  description: Specifies whether the message is an error message
+                  default: false
+              required:
+                - message
+                - sender
+                - timestamp
+                - error
+      responses:
+        "200":
+          description: Message sent successfully
+        "500":
+          description: Internal server error
