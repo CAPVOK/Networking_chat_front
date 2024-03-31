@@ -12,7 +12,11 @@ app.post("/api/send-message", (req, res) => {
 
   axios.post(
     `http://localhost:5001/api/send-message`,
-    { message: "урааааа" },
+    {
+      message: `Привет, ${req.body.sender}`,
+      sender: "back",
+      timestamp: (new Date).toISOString(),
+    },
     {
       headers: {
         "Content-Type": "application/json",

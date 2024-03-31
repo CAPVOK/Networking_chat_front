@@ -5,7 +5,8 @@ import {
   useEffect,
   useRef,
 } from "react";
-import { IMessageRequest } from "../../types/chat.types";
+import { IMessage, IMessageRequest } from "../../types/chat.types";
+import { useApp } from "../../store/appSlice";
 
 interface IWebsocketContext {
   socket: WebSocket | null;
@@ -33,8 +34,9 @@ export const WebSocketProvider = ({ children }: { children: ReactNode }) => {
         console.log("WebSocket connection closed.");
       };
 
-      newSocket.onmessage = (message: MessageEvent<string>) => {
-        console.log(message);
+      newSocket.onmessage = (msg: MessageEvent<string>) => {
+        const message: IMessage = JSON.parse(msg.data);
+        useApp.getState().saveMessage({ ...message, isLoading: false });
       };
 
       newSocket.onerror = (error) => {
@@ -67,7 +69,6 @@ export const WebSocketProvider = ({ children }: { children: ReactNode }) => {
         socketRef.current &&
         socketRef.current.readyState === WebSocket.OPEN
       ) {
-        console.log("context useEffect");
         socketRef.current.close();
         socketRef.current = null;
       }

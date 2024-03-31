@@ -14,8 +14,6 @@ export const useMainPage = () => {
     if (index === 0) return true;
     const currentDate = new Date(messages[index].timestamp);
     const prevDate = new Date(messages[index - 1].timestamp);
-    console.log(currentDate.toDateString());
-    console.log(prevDate.toDateString());
     return currentDate.toDateString() !== prevDate.toDateString();
   };
 
