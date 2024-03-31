@@ -5,7 +5,7 @@ import {
   useEffect,
   useRef,
 } from "react";
-import { IMessageRequest } from "../types/chat.types";
+import { IMessageRequest } from "../../types/chat.types";
 
 interface IWebsocketContext {
   socket: WebSocket | null;
@@ -31,6 +31,10 @@ export const WebSocketProvider = ({ children }: { children: ReactNode }) => {
 
       newSocket.onclose = () => {
         console.log("WebSocket connection closed.");
+      };
+
+      newSocket.onmessage = (message: MessageEvent<string>) => {
+        console.log(message);
       };
 
       newSocket.onerror = (error) => {
