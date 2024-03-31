@@ -52,7 +52,7 @@ async function websocket(expressServer, app) {
           client.send(JSON.stringify(message));
         }
       });
-      res.status(200).json({ success: true, message: "Message received." });
+      res.status(200).json({ message: "Message received." });
     } catch (error) {
       console.error("Error processing message:", error);
       res
