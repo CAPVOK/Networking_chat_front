@@ -10,6 +10,7 @@ const StyledTextTime = styled(Typography)(() => ({
 
 const StyledTextBody = styled(Typography)(() => ({
   color: "var(--clr-on-primary-container)",
+  wordBreak: "break-word"
 }));
 
 const StyledTextName = styled(Typography)(() => ({
