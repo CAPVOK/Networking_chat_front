@@ -9,7 +9,7 @@ require("dotenv").config();
 const app = express();
 
 const swaggerDocument = YAML.load("./swagger.yaml");
-const port = process.env.PORT;
+const port = process.env.PORT | 5001;
 
 app.use(express.json());
 // Настройка маршрута для Swagger UI

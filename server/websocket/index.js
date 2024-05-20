@@ -27,7 +27,7 @@ async function websocket(expressServer, app) {
         console.log("New message from client:", JSON.parse(messageData.toString("utf8")));
         // Пересылаем сообщение на HTTP POST эндпоинт
         await axios.post(
-          `http://localhost:${process.env.SERVER_PORT}/api/send-message`,
+          `http://${process.env.SERVER_URL || '192.168.0.84:8082'}/api/send-message`,
           messageData,
           {
             headers: {
