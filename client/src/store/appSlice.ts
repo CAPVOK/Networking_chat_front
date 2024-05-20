@@ -19,12 +19,22 @@ const initialState: AppStateType = {
 export const useApp = create<AppStateType & AppActions>((set) => ({
   ...initialState,
   clearChat: () => set({ messages: initialState.messages }),
-  saveMessage: (message) =>
-    set((state) => ({
-      messages: state.messages
-        .filter((msg) => msg.timestamp !== message.timestamp)
-        .concat(message),
-    })),
+  saveMessage: (newMessage) =>
+    set((state) => {
+      const currentMessageInChat = state.messages.find(
+        (msg) => msg.timestamp === newMessage.timestamp
+      );
+      if (newMessage.error && currentMessageInChat) {
+        return {
+          messages: state.messages,
+        };
+      }
+      return {
+        messages: state.messages
+          .filter((msg) => msg.timestamp !== newMessage.timestamp)
+          .concat(newMessage),
+      };
+    }),
   saveUserName: (userName) => set({ userName }),
 }));
 
